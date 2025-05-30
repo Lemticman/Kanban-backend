@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+ 
 app = Flask(__name__)
 CORS(app, origins=["https://kanban-frontend-delta.vercel.app"], supports_credentials=True)
 
