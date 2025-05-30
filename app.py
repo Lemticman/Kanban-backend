@@ -7,7 +7,8 @@ CORS(app, origins="*", supports_credentials=True)
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app, origins=["https://kanban-frontend-delta.vercel.app"], supports_credentials=True)
+
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///kanban.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
