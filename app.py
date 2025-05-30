@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from flask_cors import CORS
-CORS(app, supports_credentials=True)
+CORS(app, origins="*", supports_credentials=True)
 from datetime import datetime
 
 app = Flask(__name__)
@@ -61,7 +61,7 @@ class Task(db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST', 'OPTIONS'])
 def register():
     data = request.json
     hashed_pw = bcrypt.generate_password_hash(data['password']).decode('utf-8')
