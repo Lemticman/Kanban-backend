@@ -1,6 +1,3 @@
-flask
-flask_cors
+Flask
+flask-cors
 gunicorn
-flask_sqlalchemy
-flask_bcrypt
-flask_login
